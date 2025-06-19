@@ -1,0 +1,96 @@
+/* Space background animation */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: black;
+  color: white;
+  height: 100vh;
+}
+
+.stars {
+  background: url('https://raw.githubusercontent.com/JulianPrieber/stars-background/master/stars.png') repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: starScroll 60s linear infinite;
+  z-index: -1;
+}
+
+@keyframes starScroll {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #444;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 15px #0ff;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0ff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #0ff;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section h2 {
+  color: #0ff;
+  margin-bottom: 0.5rem;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section li {
+  margin: 5px 0;
+  color: #eee;
+}
+
+.socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0ff;
+  font-weight: bold;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
