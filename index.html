@@ -1,176 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Me</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: black;
-      color: white;
-      overflow-x: hidden;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-    }
-    .card {
-      background: rgba(0,0,0,0.9);
-      border: 2px solid #0ff;
-      padding: 1.5rem;
-      border-radius: 15px;
-      max-width: 400px; /* smaller width */
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 0 20px #0ff, 0 0 40px rgba(0,255,255,0.2);
-      overflow: hidden;
-    }
-    .profile-img {
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      border: 2px solid #0ff;
-      margin-bottom: 0.8rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .profile-img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #0ff;
-    }
-    h1 {
-      color: #0ff;
-      margin: 0.3rem 0;
-      font-size: 1.5rem;
-    }
-    .section h2 {
-      color: #0ff;
-      margin-bottom: 0.3rem;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-    .section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: block;
-      overflow: hidden;
-    }
-    .section li {
-      margin: 3px 0;
-      padding: 3px;
-      border-radius: 5px;
-      transition: 0.2s;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .section li:hover {
-      color: #0ff;
-      background: rgba(0,255,255,0.1);
-    }
-    .socials a {
-      margin: 0 6px;
-      text-decoration: none;
-      color: #0ff;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: transform 0.3s, text-shadow 0.3s;
-    }
-    .socials a:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-    }
-
-    /* Responsive text and card scaling */
-    @media (max-width: 480px) {
-      .card {
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 1.2rem;
-      }
-      .section h2 {
-        font-size: 1rem;
-      }
-      .section li {
-        font-size: 0.85rem;
-      }
-      .profile-img {
-        width: 70px;
-        height: 70px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Me</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    max-height: 90vh; /* limit height */
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    background: rgba(0,0,0,0.9);
+    border: 2px solid #0ff;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    max-height: 90vh; /* prevent overflow */
+    overflow-y: auto; /* scroll if content exceeds height */
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 20px #0ff, 0 0 40px rgba(0,255,255,0.2);
+  }
+  .profile-img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #0ff;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #0ff;
+  }
+  h1 { color: #0ff; margin: 0.3rem 0; font-size: 1.5rem; }
+  .section h2 {
+    color: #0ff;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  .section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  .section li {
+    margin: 3px 0;
+    padding: 3px;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .section li:hover {
+    color: #0ff;
+    background: rgba(0,255,255,0.1);
+  }
+  .socials a {
+    margin: 0 6px;
+    text-decoration: none;
+    color: #0ff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s, text-shadow 0.3s;
+  }
+  .socials a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <article class="card">
-      <header>
-        <img 
-          src="https://cdn.discordapp.com/avatars/780971705614991381/b9b1b9ac8281297e980548595a9224f3.webp?size=40" 
-          alt="Profile picture of Star_destroyer11" 
-          class="profile-img" 
-        />
-        <h1>Star_destroyer11</h1>
-        <p>📍 United States</p>
-        <p class="bio">I'm a curious mind exploring code, games, and creativity. I love building, learning, and playing.</p>
-      </header>
+<div class="container">
+  <article class="card">
+    <header>
+      <img src="https://cdn.discordapp.com/avatars/780971705614991381/b9b1b9ac8281297e980548595a9224f3.webp?size=40" alt="Profile picture" class="profile-img" />
+      <h1>Star_destroyer11</h1>
+      <p>📍 United States</p>
+      <p class="bio">I'm a curious mind exploring code, games, and creativity. I love building, learning, and playing.</p>
+    </header>
 
-      <section class="section">
-        <h2 onclick="toggleList(this)">💼 Skills</h2>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>Python, Java, C, C#, C++, Rust</li>
-          <li>SQL, Go, Kotlin, Swift, Ruby, PHP</li>
-          <li>Assembly, Bash/Shell, Perl, PowerShell</li>
-          <li>Dart, F#</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2 onclick="toggleList(this)">💼 Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python, Java, C, C#, C++, Rust</li>
+        <li>SQL, Go, Kotlin, Swift, Ruby, PHP</li>
+        <li>Assembly, Bash/Shell, Perl, PowerShell</li>
+        <li>Dart, F#</li>
+      </ul>
+    </section>
 
-      <section class="section">
-        <h2 onclick="toggleList(this)">🛠 Currently Working On</h2>
-        <ul>
-          <li>Custom Minecraft Plugins</li>
-          <li>Experimenting with Exploit Research</li>
-          <li>Developing <strong>Wig</strong> — a fast programming language like Rust for system components</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2 onclick="toggleList(this)">🛠 Currently Working On</h2>
+      <ul>
+        <li>Custom Minecraft Plugins</li>
+        <li>Experimenting with Exploit Research</li>
+        <li>Developing <strong>Wig</strong> — a fast programming language like Rust for system components</li>
+      </ul>
+    </section>
 
-      <section class="section">
-        <h2 onclick="toggleList(this)">🎮 Favorite Games</h2>
-        <ul>
-          <li>Minecraft</li>
-          <li>Satisfactory</li>
-          <li>Turing Complete</li>
-          <li>Factorio</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2 onclick="toggleList(this)">🎮 Favorite Games</h2>
+      <ul>
+        <li>Minecraft</li>
+        <li>Satisfactory</li>
+        <li>Turing Complete</li>
+        <li>Factorio</li>
+      </ul>
+    </section>
 
-      <section class="section">
-        <h2 onclick="toggleList(this)">🌌 Hobbies</h2>
-        <ul>
-          <li>Coding & Modding</li>
-          <li>Exploit Hunting</li>
-          <li>Logistics</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2 onclick="toggleList(this)">🌌 Hobbies</h2>
+      <ul>
+        <li>Coding & Modding</li>
+        <li>Exploit Hunting</li>
+        <li>Logistics</li>
+      </ul>
+    </section>
 
-      <footer class="socials">
-        <a href="https://github.com/Star-destroyer11" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://discord.com/users/780971705614991381" target="_blank" rel="noopener noreferrer">Discord</a>
-      </footer>
-    </article>
-  </div>
+    <footer class="socials">
+      <a href="https://github.com/Star-destroyer11" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://discord.com/users/780971705614991381" target="_blank" rel="noopener noreferrer">Discord</a>
+    </footer>
+  </article>
+</div>
 
-  <script>
-    function toggleList(header) {
-      const ul = header.nextElementSibling;
-      ul.style.display = (ul.style.display === 'none' || ul.style.display === '') ? 'block' : 'none';
-    }
-  </script>
+<script>
+function toggleList(header) {
+  const ul = header.nextElementSibling;
+  ul.style.display = (ul.style.display === 'none' || ul.style.display === '') ? 'block' : 'none';
+}
+</script>
 </body>
 </html>
