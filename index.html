@@ -127,6 +127,16 @@
     transform: translateX(5px);
   }
 
+  .section li a {
+    color: inherit;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  }
+
+  .section li a:hover {
+    text-shadow: 0 0 8px #0ff, 0 0 16px rgba(0,255,255,0.5);
+  }
+
   .socials {
     margin-top: 1rem;
     display: flex;
@@ -181,11 +191,7 @@
 
     <section class="section">
       <h2 onclick="toggleList(this)">🎮 Favorite Games</h2>
-      <ul>
-        <li>Minecraft</li>
-        <li>Satisfactory</li>
-        <li>Turing Complete</li>
-        <li>Factorio</li>
+      <ul id="games-list">
       </ul>
     </section>
 
@@ -210,6 +216,25 @@ function toggleList(header) {
   const ul = header.nextElementSibling;
   ul.classList.toggle('active');
 }
+
+const games = [
+  { name: 'Minecraft', url: 'https://www.minecraft.net/' },
+  { name: 'Satisfactory', url: 'https://www.satisfactorygame.com/' },
+  { name: 'Turing Complete', url: 'https://store.steampowered.com/app/596100/Turing_Complete/' },
+  { name: 'Factorio', url: 'https://www.factorio.com/' }
+];
+
+const gamesList = document.getElementById('games-list');
+games.forEach(game => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = game.url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.textContent = game.name;
+  li.appendChild(a);
+  gamesList.appendChild(li);
+});
 </script>
 </body>
 </html>
